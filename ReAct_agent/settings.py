@@ -1,6 +1,7 @@
-from pydantic_ai.settings import ModelSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-class Settings():
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env",env_file_encoding='utf-8')
     GROQ_API_KEY : str
 
 settings = Settings()
